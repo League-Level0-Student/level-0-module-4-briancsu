@@ -32,7 +32,7 @@ import processing.core.PImage;
  *      println("X: " + mouseX + " Y: " + mouseY);
  * 
  *   7. Use an if statement to check if the user clicked the mouse
- * 
+ * 531, 121
  *   8. If the user clicked the mouse, use another if statement to check the
  *      X and Y coordinates. If the coordinates are on Waldo call the
  *      playWhoohoo() method, otherwise call the playDoh() method.
@@ -50,12 +50,35 @@ public class WheresWaldo extends PApplet {
 
     @Override
     public void setup() {
-        
+       waldo = loadImage("waldo.jpeg");
+       waldo.resize(WIDTH, HEIGHT);
+       background(waldo);
     }
 
     @Override
     public void draw() {
-        
+    	 
+    	int X = mouseX;
+    	 int Y = mouseY;
+    	 if (mousePressed) {
+    		 System.out.println(X);
+    		 System.out.println(Y);
+    	 }
+    	 if (X == 531 && Y == 121 && mousePressed == true) {
+    		 playWhoohoo();
+    	 }
+    	 else if(X != 531 && Y != 121 && mousePressed==true){
+    		 playDoh();
+    	 }
+    		 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
     }
 
     static public void main(String[] args) {

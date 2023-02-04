@@ -65,14 +65,18 @@ public class GooglyEyes extends PApplet {
     	
     	
     	fill(000000);
-    	
-    	ellipse(mouseX, mouseY, 50,50);
-    	ellipse(mouseX+237, mouseY + 3, 50, 50);
-    	if(mouseX > 237 || mouseX < 117 || mouseY >361 || mouseY<241) {
-    		mouseX=175;
-    		mouseY=300;
+    	int drawposX = mouseX;
+    	int drawposY = mouseY;
+if(mouseX > 237 || mouseX < 117 || mouseY >361 || mouseY<241) {
+    		
+    		drawposX=175;
+    		drawposY=300;
     		System.out.println("Works");
+    		
     	}
+    	ellipse(drawposX, drawposY, 50,50);
+    	ellipse(drawposX+237, drawposY + 3, 50, 50);
+    	
     	
     	//    	if (pupilX > 237 || pupilX < 117 || pupilY >361 || pupilY < 241 || pupilx > 455 || pupilx < 335 || pupily > 359 || pupily < 239) {
 //    		
