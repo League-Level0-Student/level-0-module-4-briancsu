@@ -6,7 +6,7 @@ public class StringMethods2 {
 		
 		// 1. Create a String variable and initialize it with
 		//    random upper and lower case characters.
-
+		String a = "Brian";
 		// 2. Print your String to the console in upper case.
 		
 		// 3. Print your String to the console in lower case.
