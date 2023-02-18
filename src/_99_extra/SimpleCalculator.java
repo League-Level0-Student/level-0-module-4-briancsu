@@ -15,9 +15,20 @@ public class SimpleCalculator {
 		int operation = JOptionPane.showOptionDialog(null, "Add, Subtract, Multiply, Divide", "Pop-up Title", 0,
 				JOptionPane.INFORMATION_MESSAGE, null, new String[] { "Add", "Subtract", "Multiply", "Divide" },
 				null);
-
+			if(operation == 0) {
+				add(num1, num2);
+			}
+			else if(operation == 1) {
+				subtract(num1, num2);
+			}
+			else if(operation == 2) {
+				multiply(num1, num2);
+			}
+			else if(operation == 3) {
+				divide(num1, num2);
+			}
 		// 5. Call the methods created in steps 3 and 4 to perform the appropriate operation.
-		if()
+		
 		// 6. Wrap steps 1, 2 and 5 in a for loop to repeat calculator operations
 	}
 
