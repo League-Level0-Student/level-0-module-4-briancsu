@@ -1,7 +1,6 @@
 package _99_extra.pin_the_tail;
 
 import java.io.File;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -14,6 +13,9 @@ public class PinTheTail extends PApplet {
     static final int HEIGHT = 600;
     PImage donkey;
     PImage tail;
+    int Tailx;
+	int Taily;
+	boolean hasPlaced = false;
     @Override
     public void settings() {
     	size(WIDTH, HEIGHT); 
@@ -23,15 +25,53 @@ public class PinTheTail extends PApplet {
     public void setup() {
     	donkey = loadImage("donkey.jpg");      //change the file name if you need to
     	tail = loadImage("tail.png");  
-    	size(550, 406);
-    	
+    	donkey.resize(WIDTH,HEIGHT );
+    	tail.resize(80, 80);  
     }
 
-    @Override
+
     public void draw() {
-    	background (donkey);
-    	image(tail, mouseX, mouseY);
+    	
+    	background(0,0,0);
+    	
+    	rect(0, 0, 30, 30);
+    	
+    	
+    	if(dist(0, 0, mouseX, mouseY) < 30) {
+    		background (donkey);
+    	
+    		
+    		
+    	}
+    	if(mousePressed && ! hasPlaced) {
+    		Tailx = mouseX;
+    		Taily= mouseY;
+    		hasPlaced = true;
+    	}
+    	if(hasPlaced == true){
+    		image(tail, Tailx, Taily);
+    		background (donkey);
+    	
+    		image(tail, Tailx, Taily);
+    		
+    	}
+    	else {
+    		image(tail, mouseX-10, mouseY-20);
+       		
+    	}
+    	if(dist(705, 205, Tailx, Taily) < 40) {
+    		playWhoohoo();
+    		
+    	}
+    	
+    	
+    	
+    	
+    	
     }
+    
+
+    
 
     static public void main(String[] args) {
         PApplet.main(PinTheTail.class.getName());
